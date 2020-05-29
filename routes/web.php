@@ -32,6 +32,11 @@ Route::get('/pizzas', function () {
     ]);
 });
 
+Route::get('/pizzas/{id}', function ($id) {
+    // use the $id variable to query the db for a record
+    return view('details',['id' => $id]);
+});
+
 /**
  * Route is a class that has a get() method
  * get takes 2 arguments: 
