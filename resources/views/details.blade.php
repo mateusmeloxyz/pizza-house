@@ -9,8 +9,6 @@
             Pizza List - {{ $id }}
         </div>
 
-
-
     </div>
 </div>
 @endsection
