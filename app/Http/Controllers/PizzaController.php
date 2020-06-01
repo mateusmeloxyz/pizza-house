@@ -3,21 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pizza; //to include pizza model into this controller
 
 class PizzaController extends Controller
 {
     public function index(){
         // get data from database
-        $pizzas = [
-            ['type' => 'hawaiian', 'base' => 'cheesy crust'],
-            ['type' => 'volcano', 'base' => 'garlic crust'],
-            ['type' => 'veg supreme', 'base' => 'thin & crispy']
-        ];
-    
+        //$pizzas = Pizza::all(); // all is an standard method that comes with every eloquent model
+        //$pizzas = Pizza::orderBy('name', 'desc')->get(); //a way to fetch from database with an orderby
+        //$pizzas = Pizza::where('type','hawaiian')->get();
+        $pizzas = Pizza::latest()->get();
+
         return view('pizzas',[
-            'pizzas' => $pizzas,
-            'name' => request('name'),
-            'age' => request('age')
+            'pizzas' => $pizzas
         ]);
     }
 
