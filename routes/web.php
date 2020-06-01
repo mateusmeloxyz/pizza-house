@@ -19,7 +19,10 @@ Route::get('/', function () {
 
 Route::get('/pizzas', 'PizzaController@index');
 
+Route::get('/pizzas/create', 'PizzaController@create'); // must come before id route so that create isn't treated as an id
+
 Route::get('/pizzas/{id}', 'PizzaController@show');
+
 
 /**
  * Route is a class that has a get() method
