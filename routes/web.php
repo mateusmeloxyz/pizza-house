@@ -21,10 +21,11 @@ Route::get('/pizzas', 'PizzaController@index');
 
 Route::get('/pizzas/create', 'PizzaController@create'); // must come before id route so that create isn't treated as an id
 
-Route::POST('/pizzas', 'PizzaController@store');
+Route::post('/pizzas', 'PizzaController@store');
 
 Route::get('/pizzas/{id}', 'PizzaController@show');
 
+Route::delete('/pizzas/{id}', 'PizzaController@destroy');
 
 
 

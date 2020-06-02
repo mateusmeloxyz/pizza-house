@@ -5,6 +5,18 @@
     <h1>Order for {{ $pizza->name }}</h1>
     <p class="type">Type - {{ $pizza->type }}</p>
     <p class="base">Base - {{ $pizza->base }}</p>
+    <p class="toppings">Extra toppings:</p>
+    <ul>
+        @foreach($pizza->toppings as $topping)
+            <li>{{ $topping }}</li>
+        @endforeach
+    </ul>
+    <form action="/pizzas/{{ $pizza->id }}" method="POST">
+        @csrf
+         <!-- This is used because not every browser can handle DELET requests -->
+        @method('DELETE')
+        <button>Complete Order</button>
+    </form>
 </div>
 
 <a href="/pizzas" class="back"><- back to all pizzas</a>
