@@ -27,7 +27,6 @@ class PizzaController extends Controller
     }
 
     public function create() {
-        // use the $id variable to query the db for a record
         return view('pizzas.create');
     }
 }
