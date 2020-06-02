@@ -7,6 +7,10 @@ use App\Pizza; //to include pizza model into this controller
 
 class PizzaController extends Controller
 {
+    // public function __construct(){
+    //     $this->middleware('auth'); // this makes so that every controller action requires authentication
+    // }
+
     public function index(){
         // get data from database
         //$pizzas = Pizza::all(); // all is an standard method that comes with every eloquent model
