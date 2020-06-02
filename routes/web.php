@@ -23,6 +23,8 @@ Route::post('/pizzas', 'PizzaController@store');
 Route::get('/pizzas/{id}', 'PizzaController@show')->middleware('auth');;
 Route::delete('/pizzas/{id}', 'PizzaController@destroy')->middleware('auth');;
 
-Auth::routes(); // generates routes behind the scene for Auth views
+Auth::routes([
+    'register' => false // this disable register routes so that only staff members can login
+]); // generates routes behind the scene for Auth views
 
 Route::get('/home', 'HomeController@index')->name('home');
