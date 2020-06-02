@@ -52,6 +52,6 @@ class PizzaController extends Controller
         $pizza = Pizza::findOrFail($id);
         $pizza->delete();
 
-        return redirect('/pizzas');
+        return redirect('/orders/pizzas'); // should we use view() here instead of redirect?
     }
 }
