@@ -27,14 +27,6 @@ Route::get('/pizzas/{id}', 'PizzaController@show');
 
 Route::delete('/pizzas/{id}', 'PizzaController@destroy');
 
+Auth::routes(); // generates routes behind the scene for Auth views
 
-
-/**
- * Route is a class that has a get() method
- * get takes 2 arguments: 
- * 1-the rout acording to the root webpage. Ex:
- * www.mywebapp.com/
- * 
- * 2-a function returning a view that is located in the resources/views folder
- * 
- */
+Route::get('/home', 'HomeController@index')->name('home');
